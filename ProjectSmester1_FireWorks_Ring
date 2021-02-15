@@ -1,0 +1,168 @@
+#include <iomanip>
+#include <iostream>
+#include<cmath>         //  for using  methimatical operators .
+#include<windows.h>    // use for sleep .
+#include<stdlib.h>    // use for clear the screem.
+//#include "mmsystem.h" // use for produce sound.
+using namespace std;
+
+
+    
+       int funcheight(int height)
+{
+	int  i,j;
+
+	char array[height][100];
+	
+	
+	for (i = 0; i <=height; i++)
+    {
+        for (int j = 0; j <=height-i; j++)
+        {
+            cout<<"\n";
+        }
+        
+     
+       
+           for(int k=0 ; k<=75; k++)
+	    {
+	        if(k==75) {
+	            cout << "{}\n";
+	                	system("Color 0A");
+	            
+	          	
+	        }else {
+	            cout << " ";
+	        }
+	    } 
+
+	 Sleep(100);
+	 
+        system("cls");
+    }
+	
+}
+    	
+    int curvePath (int x, int y)  // Function for equation of circle.
+    {
+        int saver = sqrt(pow(x,2)+pow(y,2));
+         return saver;
+    
+    }
+    
+      int radius_calculator (int *radius1) // Function to calculate radius.
+	{       
+	   	   int xAxis1 = *radius1;
+          static int yAxis1= (*radius1)*80;
+          
+            
+      		 for(int x=(xAxis1); x>=-xAxis1; x=x-2)
+        {   
+             
+            for(int y=(-yAxis1); y<=yAxis1;y++)
+              
+                   if (curvePath (x,y)==*radius1)
+               {     
+                       cout<<"*";
+               }   
+                  else 
+                     cout<<" ";
+            
+                     cout<<endl;
+                 }
+                  
+			return 0;	 
+}  
+     
+int main()
+{       
+         
+           system("Color 0D");
+          cout<<setw(70) <<"H E L L O       A L P H A \n \n";
+         
+          cout<<setw(100)<<"----------------------------------------------------------------------------------------\n\n";
+          cout<<setw(100)<<"P R E S S    E N T E R   TO  S C A N  Y O U R  I D E N T I F I C A T I O N  \n\n\n";
+          cin.get();
+          cout<<setw(90)<<" Oh  C H I E!!  S O R R Y   F O R  D I S T U R B A N C E \n"
+		                <<setw(80)<<"(but according to you it is our policy) \n \n";
+		   cout<<setw(100)<<"  F O R    E X P L O S I O N  O F   Y O U R    F I R E W O R K   P R E S S   E N T E R ";
+		   
+		       cin.get(); 
+		        
+		    
+		    
+		    
+		    
+		   
+		  
+		   int radius,radius1;
+          cout<<"Enter the Value of Radius :";
+          cin>>radius;
+          
+          
+         	int height=200;
+        	int array[height][200];
+         	cout<<"Enter the height of the firework: ";
+        	cin>>height;
+
+        	funcheight(height);
+	         system("cls"); 
+                 cout<<"\n\n\n\n\n\n"<<setw(80)<<"Y O U R    F I R E   W O R K   I S  L A U N C H E D!!\n";
+                Sleep(1000);
+        
+           int *ptr;
+           ptr=&radius;
+             
+		   
+        //  PlaySound(TEXT("bomb.wav"),NULL,SND_SYNC);
+          
+           for(int i=1; i<radius+2; i++)
+           {     //  system("Color 0B"); 
+		            radius1=i;
+                cout<<radius_calculator(&radius1);
+                     system("cls"); 
+					 	system("Color 0C");
+    	  
+           //...........	system("Color 0D"); 
+        	 
+      	   
+	      
+            }
+            
+            system("cls");
+            int xAxis = radius;
+                int yAxis= (radius1);
+          
+          for(int i=0; i<1;i++) 
+		   
+    
+	{
+			     		 for(int x=(xAxis); x>=-xAxis; x=x-2)
+        {   
+             
+            for(int y=(-yAxis); y<=yAxis;y++)
+              
+                   if (curvePath (x,y)==radius)
+               {     
+                       cout<<setw(20)<<"*";
+                       
+               }   
+                  else 
+                     cout<<" ";
+            
+                     cout<<endl;
+                 }
+            //      PlaySound(TEXT("bomb2.wav"),NULL,SND_SYNC);
+                 system("cls");
+  }
+    
+             cout<<"\n\n\n\n\n\n\n\n"<<setw(80)<<" T  H A N K   Y O U !\n\n";
+			  
+    
+                
+            
+             return 0;
+               
+}
+
+
